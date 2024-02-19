@@ -1,17 +1,12 @@
 apiVersion: v1
-kind: Namespace
-metadata:
-  name: acg-ns
----
-apiVersion: v1
 kind: Service
 metadata:
   namespace: acg-ns
   name: acg-lb
 spec:
-  type: LoadBalancer
   ports:
-  - port: 80
+  - port: 8082
+    targetPort: 80
   selector:
     app: acg-stress
 ---
@@ -57,5 +52,5 @@ spec:
     kind: Deployment
     name: acg-web
   minReplicas: 1
-  maxReplicas: 10
+  maxReplicas: 15
   targetCPUUtilizationPercentage: 50
