@@ -48,5 +48,5 @@ spec:
     kind: Deployment
     name: acg-web
   minReplicas: 1
-  maxReplicas: 15
+  maxReplicas: 50
   targetCPUUtilizationPercentage: 50
